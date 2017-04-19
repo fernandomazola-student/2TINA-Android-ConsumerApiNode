@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.github.com")
+                //IP da maquina que esta rodando o emulador, consumindo o gson localmente
+                .baseUrl("http://10.0.2.2:3000/dados")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
