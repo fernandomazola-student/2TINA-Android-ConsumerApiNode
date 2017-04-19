@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         Retrofit retrofit = new Retrofit.Builder()
                 //IP da maquina que esta rodando o emulador, consumindo o gson localmente
-                .baseUrl("http://10.0.2.2:3000/")
+                .baseUrl("http://10.20.22.14:3000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
