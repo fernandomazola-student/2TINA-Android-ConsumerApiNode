@@ -2,6 +2,7 @@ package br.com.fiap.a2tina_android_consumerapinode;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,12 +27,13 @@ public class MainActivity extends AppCompatActivity {
         api.getDados().enqueue(new Callback<Contato>() {
             @Override
             public void onResponse(Call<Contato> call, Response<Contato> response) {
-                
+                Contato contato = response.body();
+                Toast.makeText(MainActivity.this, contato.getNome(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<Contato> call, Throwable t) {
-
+                Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
